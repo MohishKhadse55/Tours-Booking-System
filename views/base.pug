@@ -1,0 +1,28 @@
+doctype html
+html
+	//-  so when you want to add any specific file or specific script then you should extend the block and append that to it 
+	head
+		block head 	
+			meta(charset='UTF-8')
+			meta(name='viewport' content='width=device-width , initial-scale=1.0')
+			link(rel='stylesheet' href='/css/style.css')
+			link(rel='shortcut icon' type='image/png' href='/img/favicon.png')
+			link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
+			//- meta(http-equiv='Content-Security-Policy' content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; script-src 'self' https://somedomain.com/ 'unsafe-inline' 'unsafe-eval';  media-src *")
+
+			title Natours | #{title}
+body
+	include _header
+
+	// CONTENT
+	block content
+		section.overview 
+			h1= tour 
+
+	//FOOTER
+	include _footer
+	//- script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js')
+	//- script(src='/js/mapBox.js')
+	//- script(src='/js/login.js')
+	script(src='/js/bundle.js')
+	
